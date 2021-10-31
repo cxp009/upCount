@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_hp_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBlack"
+        android:gravity="center"
+        android:text="记账"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="您当前用户名为："/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/tv_main_username"
+            android:text="Username"
+            android:gravity="center"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="26sp"
+            android:text="￥"/>
+
+        <EditText
+            android:gravity="center"
+            android:textSize="26sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:id="@+id/et_main_count"
+            android:text="0"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_main_record"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@color/colorBlack"
+        android:text="记录账单"
+        android:textColor="@color/colorWhite"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_main_query"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@color/colorBlack"
+        android:text="查看历史记录"
+        android:textColor="@color/colorWhite"
+        android:textSize="22sp" />
+
+</LinearLayout>
