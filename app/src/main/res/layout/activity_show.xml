@@ -10,7 +10,7 @@
         android:layout_height="50dp"
         android:background="@color/colorBlack"
         android:gravity="center"
-        android:text="upCount"
+        android:text="支出记录"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         android:textSize="24sp" />

@@ -11,7 +11,7 @@
 
         <TextView
             android:id="@+id/list_username"
-            android:hint="Usernmae"
+            android:hint="cost"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:textSize="22sp"

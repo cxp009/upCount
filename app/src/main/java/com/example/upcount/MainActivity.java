@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     //声明控件
     private Button mBtnRecord, mBtnQuery;
     private TextView mTvUsername;
-    private EditText mEtCount;
+    private EditText mEtCount,mEtCost;
     //用于获取系统时间
     private Date date;
     //设置时间显示格式
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //绑定控件
         mBtnRecord = findViewById(R.id.btn_main_record);
         mBtnQuery = findViewById(R.id.btn_main_query);
+        mEtCost = findViewById(R.id.et_main_cost);
         mEtCount = findViewById(R.id.et_main_count);
         mTvUsername = findViewById(R.id.tv_main_username);
         //初始赋值
@@ -50,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 time = sdf.format(date);
                 Toast.makeText(getApplicationContext(), "Current Time:" + time, Toast.LENGTH_SHORT).show();
                 //获取用户输入的金额
+                Editable cost = mEtCost.getText();
                 String count = mEtCount.getText().toString();
                 //SQLite数据库处理
                 mDbCount = openOrCreateDatabase("upCount.db",  Context.MODE_PRIVATE, null);
-                mDbCount.execSQL("CREATE TABLE IF NOT EXISTS count (_id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, time VARCHAR, count VARCHAR)");
-                mDbCount.execSQL("INSERT INTO count VALUES (NULL, ?, ?, ?)",new Object[]{LoginActivity.Username, time, count});
+                mDbCount.execSQL("CREATE TABLE IF NOT EXISTS count (_id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, time VARCHAR,cost VARCHAR, count VARCHAR)");
+                mDbCount.execSQL("INSERT INTO count VALUES (NULL, ?, ?, ?)",new Object[]{LoginActivity.Username, time,cost, count});
                 mDbCount.close();
             }
         });

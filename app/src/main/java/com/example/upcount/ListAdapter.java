@@ -38,7 +38,8 @@ public class ListAdapter extends BaseAdapter {
     }
 
     static class ViewHolder{
-        public TextView mTvUsername, mTvTime, mTvCount;
+        public TextView mTvCost, mTvTime, mTvCount;
+
     }
 
     @Override
@@ -48,11 +49,11 @@ public class ListAdapter extends BaseAdapter {
         if (convertView==null){
             convertView=mLayoutInflater.inflate(R.layout.layout_list,null);
             holder=new ViewHolder();
-            holder.mTvUsername = convertView.findViewById(R.id.list_username);
+            holder.mTvCost = convertView.findViewById(R.id.list_username);
             holder.mTvCount = convertView.findViewById(R.id.list_count);
             holder.mTvTime = convertView.findViewById(R.id.list_time);
             //设置记录界面
-            holder.mTvUsername.setText(entity.getUsername());
+            holder.mTvCost.setText(entity.getUsername());
             holder.mTvTime.setText(entity.getTime());
             holder.mTvCount.setText("￥" + entity.getCount());
             convertView.setTag(holder);
